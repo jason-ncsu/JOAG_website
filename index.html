@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Academic Research Network</title>
+  <meta name="description" content="Interactive academic profile website with a publication network and details panel." />
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+  <div class="site-shell">
+    <header class="hero-card">
+      <div class="hero-photo-wrap">
+        <img src="assets/images/profile_cv.png" alt="Profile portrait placeholder" class="hero-photo" />
+      </div>
+
+      <div class="hero-meta">
+        <p class="eyebrow">Academic profile</p>
+        <h1>Dr. Jason Onell Ardila Galvis</h1>
+        <p class="hero-role">DVM, M.s., Ph.D. | Veterinary Epidemiologist</p>
+
+        <div class="info-grid">
+          <div>
+            <span class="label">Institution</span>
+            <span>North Carolina State University</span>
+          </div>
+          <div>
+            <span class="label">Role</span>
+            <span>Research Scholar</span>
+          </div>
+          <div>
+            <span class="label">Phone</span>
+            <span>(919) 348-0188</span>
+          </div>
+          <div>
+            <span class="label">Email</span>
+            <span>joardila@ncsu.edu</span>
+          </div>
+          <div>
+            <span class="label">Youtube channel</span>
+            <span>https://www.youtube.com/@DiseasesAnimalsRobots</span>
+          </div>
+          <div>
+            <span class="label">Location</span>
+            <span>Raleigh, North Carolina</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="bio-card">
+      <div class="section-heading">
+        <h2>Short Bio</h2>
+      </div>
+      <p>
+        I am a veterinary epidemiologist working at the intersection of animal health, surveillance,
+        mathematical modeling, and network analysis. My research focuses on disease spread,
+        biosecurity, and data-driven decision support tools for livestock production systems.
+      </p>
+    </section>
+
+    <main class="content-grid">
+      <section class="network-card">
+        <div class="section-heading section-heading-split">
+          <h2>Research Network</h2>
+          <span class="mini-note">Papers connected by topic similarity</span>
+        </div>
+
+        <div class="controls-grid">
+          <div class="control-block">
+            <label for="publication-search">Search publication</label>
+            <input
+              id="publication-search"
+              name="publication-search"
+              type="search"
+              list="publication-options"
+              placeholder="Type a paper title"
+              autocomplete="off"
+            />
+            <datalist id="publication-options"></datalist>
+          </div>
+
+        </div>
+
+        <div class="network-stage">
+          <div id="network-tooltip" class="network-tooltip" aria-hidden="true"></div>
+          <svg id="network-svg" viewBox="0 0 900 580" role="img" aria-label="Interactive publication network"></svg>
+        </div>
+      </section>
+
+      <aside class="details-card" id="details-panel">
+        <div class="section-heading">
+          <h2 id="detail-title">Paper title</h2>
+        </div>
+
+        <img id="detail-figure" loading="lazy" src="assets/images/paper-01.png" alt="Selected paper figure. Click to open full-resolution view" class="detail-figure" />
+
+        <p id="detail-summary" class="detail-summary"></p>
+
+        <div class="detail-links">
+          <a id="detail-paper-link" href="#" target="_blank" rel="noreferrer" class="button-primary">Read the paper</a>
+          <a id="detail-video-link" href="#" target="_blank" rel="noreferrer" class="button-secondary">Open related video</a>
+        </div>
+
+        <div class="meta-list">
+          <div><span class="label">Year</span><span id="detail-year"></span></div>
+          <div><span class="label">Keywords</span><span id="detail-tags"></span></div>
+          <div><span class="label">Cluster</span><span id="detail-cluster"></span></div>
+        </div>
+
+      </aside>
+    </main>
+  </div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/network.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
