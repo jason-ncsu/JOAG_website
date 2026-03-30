@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <body>
+  <div class="page-backdrop" aria-hidden="true"></div>
   <div class="site-shell">
     <header class="hero-card">
       <div class="hero-photo-wrap">
@@ -35,11 +36,11 @@
           </div>
           <div>
             <span class="label">Email</span>
-            <span>joardila@ncsu.edu</span>
+            <span><a href="mailto:joardila@ncsu.edu" class="inline-link">joardila@ncsu.edu</a></span>
           </div>
           <div>
             <span class="label">Youtube channel</span>
-            <span>https://www.youtube.com/@DiseasesAnimalsRobots</span>
+            <span><a href="https://www.youtube.com/@DiseasesAnimalsRobots" target="_blank" rel="noopener noreferrer" class="inline-link">Diseases, Animals and Robots</a></span>
           </div>
           <div>
             <span class="label">Location</span>
@@ -52,7 +53,10 @@
     <section class="bio-card">
       <div class="section-heading">
         <h2>About me</h2>
+        <span class="mini-note">Modeling, surveillance, biosecurity and applied data science</span>
       </div>
+      <div class="bio-layout">
+        <div class="bio-copy">
       <p>
       I am a veterinary epidemiologist and Research Scholar at North Carolina State University, specializing in the study of infectious disease dynamics in animal populations. My work focuses on integrating epidemiological modeling, network analysis, and large-scale data systems to better understand how diseases spread within and between farms, and to inform effective surveillance and control strategies.
     </p>
@@ -64,6 +68,12 @@
     <p>
       More broadly, my goal is to advance One Health approaches by combining data, modeling, and field knowledge to support resilient and sustainable animal production systems.
     </p>
+        </div>
+        <figure class="bio-media-card">
+          <img src="assets/images/disease_spread_NC.gif" alt="Animated map showing simulated disease spread and cumulative cases over time" class="bio-gif" />
+          <figcaption>A simulation-style visualization of disease spread and epidemic growth, featured alongside my research profile.</figcaption>
+        </figure>
+      </div>
     </section>
 
     <main class="content-grid">

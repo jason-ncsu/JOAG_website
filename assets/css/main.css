@@ -1,19 +1,20 @@
 :root {
-  --bg-1: #07142c;
-  --bg-2: #0d2d63;
-  --bg-3: #163a74;
-  --panel: rgba(24, 52, 106, 0.72);
-  --panel-strong: rgba(30, 60, 118, 0.94);
-  --border: rgba(164, 194, 255, 0.22);
-  --text: #eff5ff;
-  --muted: #c2d4ff;
-  --accent: #8edcff;
-  --accent-2: #6aa1ff;
-  --shadow: 0 22px 60px rgba(0, 0, 0, 0.28);
-  --radius-xl: 24px;
+  --bg-1: #06111f;
+  --bg-2: #0b2340;
+  --bg-3: #14365a;
+  --panel: rgba(12, 28, 50, 0.74);
+  --panel-strong: rgba(13, 34, 62, 0.94);
+  --border: rgba(156, 204, 255, 0.2);
+  --text: #f4f8ff;
+  --muted: #c8d9f3;
+  --accent: #7ee0ff;
+  --accent-2: #7bb6ff;
+  --accent-3: #8be7c4;
+  --shadow: 0 26px 70px rgba(0, 0, 0, 0.32);
+  --radius-xl: 26px;
   --radius-lg: 18px;
   --radius-md: 12px;
-  --font-sans: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-sans: "Aptos", "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -22,15 +23,38 @@ body {
   font-family: var(--font-sans);
   color: var(--text);
   background:
-    radial-gradient(circle at 18% 14%, rgba(101, 172, 255, 0.24), transparent 22%),
-    radial-gradient(circle at 84% 18%, rgba(193, 81, 255, 0.18), transparent 26%),
-    linear-gradient(135deg, var(--bg-1), var(--bg-2) 45%, var(--bg-3));
+    radial-gradient(circle at 18% 14%, rgba(101, 172, 255, 0.18), transparent 20%),
+    radial-gradient(circle at 84% 18%, rgba(130, 231, 196, 0.12), transparent 22%),
+    radial-gradient(circle at 50% 120%, rgba(123, 182, 255, 0.18), transparent 34%),
+    linear-gradient(135deg, var(--bg-1), var(--bg-2) 48%, var(--bg-3));
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+}
+
+
+.page-backdrop {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.34;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cg fill='none' stroke='%238fdcff' stroke-opacity='0.18' stroke-width='1.4'%3E%3Cpath d='M120 160 L340 110 L540 190 L740 130 L980 240 L1210 170 L1450 280'/%3E%3Cpath d='M190 590 L400 480 L620 560 L850 470 L1080 560 L1320 500'/%3E%3Cpath d='M300 280 L470 410 L690 360 L900 430 L1080 350'/%3E%3C/g%3E%3Cg fill='%2397cfff' fill-opacity='0.28'%3E%3Ccircle cx='120' cy='160' r='5'/%3E%3Ccircle cx='340' cy='110' r='4'/%3E%3Ccircle cx='540' cy='190' r='6'/%3E%3Ccircle cx='740' cy='130' r='4'/%3E%3Ccircle cx='980' cy='240' r='6'/%3E%3Ccircle cx='1210' cy='170' r='4'/%3E%3Ccircle cx='1450' cy='280' r='6'/%3E%3Ccircle cx='190' cy='590' r='5'/%3E%3Ccircle cx='400' cy='480' r='6'/%3E%3Ccircle cx='620' cy='560' r='5'/%3E%3Ccircle cx='850' cy='470' r='6'/%3E%3Ccircle cx='1080' cy='560' r='4'/%3E%3Ccircle cx='1320' cy='500' r='6'/%3E%3Ccircle cx='300' cy='280' r='5'/%3E%3Ccircle cx='470' cy='410' r='6'/%3E%3Ccircle cx='690' cy='360' r='4'/%3E%3Ccircle cx='900' cy='430' r='5'/%3E%3Ccircle cx='1080' cy='350' r='6'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: center;
 }
 
 a { color: inherit; }
 img { display: block; max-width: 100%; }
 
 .site-shell {
+  position: relative;
+  z-index: 1;
   width: min(1400px, calc(100% - 40px));
   margin: 28px auto 40px;
 }
@@ -39,7 +63,7 @@ img { display: block; max-width: 100%; }
 .bio-card,
 .network-card,
 .details-card {
-  background: linear-gradient(180deg, rgba(34, 70, 134, 0.68), rgba(20, 43, 90, 0.72));
+  background: linear-gradient(180deg, rgba(18, 40, 73, 0.76), rgba(10, 24, 49, 0.84));
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow);
@@ -50,16 +74,16 @@ img { display: block; max-width: 100%; }
   display: grid;
   grid-template-columns: 230px 1fr;
   gap: 28px;
-  padding: 28px;
+  padding: 30px;
   align-items: center;
 }
 
 .hero-photo-wrap {
   width: 100%;
-  border-radius: 20px;
+  border-radius: 22px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.24), inset 0 0 0 1px rgba(255, 255, 255, 0.06);
 }
 
 .hero-photo {
@@ -338,4 +362,111 @@ input[type="search"]::placeholder { color: rgba(225, 236, 255, 0.58); }
   }
   .info-grid,
   .controls-grid { grid-template-columns: 1fr; }
+}
+
+
+.hero-meta h1 {
+  text-wrap: balance;
+}
+
+.inline-link {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.inline-link:hover {
+  text-decoration: underline;
+}
+
+.bio-card {
+  margin-top: 20px;
+  padding: 24px 28px;
+}
+
+.bio-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.bio-copy {
+  display: grid;
+  gap: 18px;
+}
+
+.bio-card p {
+  margin: 0;
+  line-height: 1.8;
+  color: #e6f0ff;
+  font-size: 1rem;
+}
+
+.bio-card a {
+  color: var(--accent);
+}
+
+.bio-media-card {
+  margin: 0;
+  padding: 14px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+  border: 1px solid rgba(155, 204, 255, 0.16);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03);
+}
+
+.bio-gif {
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid rgba(172, 204, 255, 0.18);
+  background: rgba(255,255,255,0.96);
+}
+
+.bio-media-card figcaption {
+  margin-top: 10px;
+  color: var(--muted);
+  line-height: 1.55;
+  font-size: 0.92rem;
+}
+
+.network-card,
+.details-card {
+  background: linear-gradient(180deg, rgba(15, 34, 61, 0.84), rgba(9, 23, 45, 0.9));
+}
+
+.section-heading h2 {
+  letter-spacing: 0.01em;
+}
+
+.network-stage {
+  min-height: 580px;
+  border: 1px solid rgba(156, 204, 255, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02);
+}
+
+.detail-figure {
+  box-shadow: 0 14px 30px rgba(0,0,0,0.18);
+}
+
+.button-primary,
+.button-secondary {
+  letter-spacing: 0.01em;
+}
+
+.button-secondary:hover,
+.button-primary:hover {
+  box-shadow: 0 10px 22px rgba(0,0,0,0.16);
+}
+
+@media (max-width: 1080px) {
+  .bio-layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 760px) {
+  .bio-card,
+  .network-card,
+  .details-card,
+  .hero-card { padding: 20px; }
+
+  .bio-media-card { padding: 10px; }
 }
